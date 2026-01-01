@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Music Player - CodeAlpha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎵</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-music"></i> CodeAlpha Music Player</h1>
+            <p>Enjoy your favorite tunes with our interactive music player</p>
+        </header>
+        
+        <div class="player-container">
+            <div class="player">
+                <!-- Album Art -->
+                <div class="album-art">
+                    <img id="album-cover" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Album Cover">
+                    <div class="vinyl-record"></div>
+                </div>
+                
+                <!-- Song Info -->
+                <div class="song-info">
+                    <h2 id="song-title">Blinding Lights</h2>
+                    <p id="artist-name">The Weeknd</p>
+                    <div class="song-progress">
+                        <span id="current-time">0:00</span>
+                        <input type="range" id="progress-bar" class="slider" min="0" max="100" value="0">
+                        <span id="duration">3:20</span>
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <div class="controls">
+                    <button id="shuffle-btn" class="control-btn">
+                        <i class="fas fa-random"></i>
+                    </button>
+                    <button id="prev-btn" class="control-btn">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button id="play-pause-btn" class="play-pause-btn">
+                        <i class="fas fa-play" id="play-icon"></i>
+                    </button>
+                    <button id="next-btn" class="control-btn">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                    <button id="repeat-btn" class="control-btn">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+                
+                <!-- Volume Control -->
+                <div class="volume-control">
+                    <i class="fas fa-volume-down"></i>
+                    <input type="range" id="volume-slider" class="slider" min="0" max="100" value="70">
+                    <i class="fas fa-volume-up"></i>
+                </div>
+                
+                <!-- Playlist -->
+                <div class="playlist">
+                    <h3><i class="fas fa-list"></i> Playlist</h3>
+                    <ul id="playlist">
+                        <!-- Songs will be added dynamically -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h3><i class="fas fa-star"></i> Features</h3>
+            <div class="feature-grid">
+                <div class="feature">
+                    <i class="fas fa-play-circle"></i>
+                    <h4>Play/Pause</h4>
+                    <p>Control playback with a single click</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-sliders-h"></i>
+                    <h4>Volume Control</h4>
+                    <p>Adjust volume with the slider</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-random"></i>
+                    <h4>Shuffle</h4>
+                    <p>Play songs in random order</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-redo"></i>
+                    <h4>Repeat</h4>
+                    <p>Loop your favorite tracks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Audio Element -->
+    <audio id="audio-player"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
